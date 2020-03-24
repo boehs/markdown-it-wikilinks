@@ -29,6 +29,20 @@ const md = require('markdown-it')()
 
 ## Options
 
+### `linkPattern`
+
+**Default:** `/\[\[([\w\s-/]+(?:\.\w+)?)(\|([\w\s/]+))?\]\]/`
+
+The regex to use when matching WikiLinks.
+
+```js
+// Allow exclamation marks to be used.
+const html = require('markdown-it')()
+  .use(require('markdown-it-wikilinks')({ linkPattern: /\[\[([\w\s/!]+)(\|([\w\s/!]+))?\]\]/ }))
+  .render('[[Slate!]]')
+  // <p><a href="./Slate!.html">Slate!</a></p>
+```
+
 ### `baseURL`
 
 **Default:** `/`
