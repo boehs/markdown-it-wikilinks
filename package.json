@@ -30,12 +30,11 @@
   "homepage": "https://github.com/boehs/markdown-it-wikilinks#readme",
   "devDependencies": {
     "coveralls": "^3.1.1",
-    "eslint": "^8.1.0",
+    "eslint": "^8.10.0",
     "istanbul": "^0.4.5",
-    "markdown-it": "^12.2.0",
+    "markdown-it": "^12.3.2",
     "markdown-it-testgen": "^0.1.6",
-    "mocha": "^9.1.3",
-    "request": "^2.88.2",
+    "mocha": "^9.2.1",
     "rimraf": "^3.0.2"
   },
   "dependencies": {
