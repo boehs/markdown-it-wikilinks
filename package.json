@@ -1,7 +1,7 @@
 {
-  "name": "markdown-it-wikilinks",
+  "name": "@gardeners/markdown-it-wikilinks",
   "version": "1.2.0",
-  "description": "WikiMedia-style links for the markdown-it parser",
+  "description": "Maintained fork of the legendary markdown-it-wikilinks",
   "main": "index.js",
   "scripts": {
     "coverage": "rimraf coverage && istanbul cover node_modules/.bin/_mocha",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jsepia/markdown-it-wikilinks.git"
+    "url": "git+https://github.com/boehs/markdown-it-wikilinks.git"
   },
   "keywords": [
     "markdown-it-plugin",
@@ -22,12 +22,12 @@
     "wikimedia",
     "wiki"
   ],
-  "author": "Julio Sepia <jsepia@juliosepia.com>",
+  "author": "Evan Boehs <evan@boehs.org>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jsepia/markdown-it-wikilinks/issues"
+    "url": "https://github.com/boehs/markdown-it-wikilinks/issues"
   },
-  "homepage": "https://github.com/jsepia/markdown-it-wikilinks#readme",
+  "homepage": "https://github.com/boehs/markdown-it-wikilinks#readme",
   "devDependencies": {
     "coveralls": "^3.1.1",
     "eslint": "^8.1.0",
