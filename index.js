@@ -7,7 +7,7 @@ const sanitize = require('sanitize-filename')
 module.exports = (options) => {
 
   const defaults = {
-    linkPattern: /\[\[([\w\s-/]+(?:\.\w+)?)(\|([\w\s/]+))?\]\]/,
+    linkPattern: /\[\[([^|]+?)(\|([\s\S]+?))?\]\]/,
     baseURL: '/',
     relativeBaseURL: './',
     makeAllLinksAbsolute: false,
