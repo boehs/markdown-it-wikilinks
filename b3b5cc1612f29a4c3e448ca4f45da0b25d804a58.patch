@@ -1,0 +1,24 @@
+From b3b5cc1612f29a4c3e448ca4f45da0b25d804a58 Mon Sep 17 00:00:00 2001
+From: Thomas Koppelaar <36331365+thomaskoppelaar@users.noreply.github.com>
+Date: Wed, 29 Jul 2020 16:22:10 +0200
+Subject: [PATCH] Update wikilinks regex
+
+- Allows dashes in the link.
+- Allows filename extension to be in the link.
+---
+ index.js | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/index.js b/index.js
+index 48738b7..3d4993b 100644
+--- a/index.js
++++ b/index.js
+@@ -39,7 +39,7 @@ module.exports = (options) => {
+   }
+ 
+   return Plugin(
+-    /\[\[([\w\s/]+)(\|([\w\s/]+))?\]\]/,
++    /\[\[([\w\s-/]+(?:\.\w+)?)(\|([\w\s/]+))?\]\]/,
+     (match, utils) => {
+       let label = ''
+       let pageName = ''
