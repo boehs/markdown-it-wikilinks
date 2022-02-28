@@ -27,7 +27,7 @@ module.exports = (options) => {
       label = label.trim()
       return label
     },
-    includeWikilinks = false
+    includeWikilinks: false
   }
 
   options = extend(true, defaults, options)
