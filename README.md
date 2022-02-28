@@ -135,7 +135,7 @@ const html = require('markdown-it')()
   // <p>Vive la <a href="./Revolution.html">révolution!</a> VIVE LA <a href="./Revolution.html">RÉVOLUTION!!!</a></p>
 ```
 
-Please note that the `generatePageNameFromLabel` function does not get applied for [piped links](https://meta.wikimedia.org/wiki/Help:Piped_link) such as `[[/Misc/Cats/Slate|kitty]]` since those already come with a target. 
+Please note that the `generatePageNameFromLabel` function does not get applied for [piped links](https://meta.wikimedia.org/wiki/Help:Piped_link) such as `[[/Misc/Cats/Slate|kitty]]` since those already come with a target.
 
 ### `postProcessPageName`
 
@@ -143,9 +143,9 @@ A transform applied to every page name. You can override it just like `generateP
 
 The default transform does the following things:
 
-* trim surrounding whitespace
-* [sanitize](https://github.com/parshap/node-sanitize-filename) the string
-* replace spaces with underscores
+- trim surrounding whitespace
+- [sanitize](https://github.com/parshap/node-sanitize-filename) the string
+- replace spaces with underscores
 
 ### `postProcessLabel`
 
@@ -153,10 +153,20 @@ A transform applied to every link label. You can override it just like `generate
 
 All the default transform does is trim surrounding whitespace.
 
+### `includeWikilinks`
+
+**Default:** `false`
+
+Include wikilink delimiters (`[[`, `]]`) in output
+
+- **false**: Do not include delimiters in output
+- **"inner"**: Include delimiters inside the link
+- **"outer"**: Wrap the link with delimiters
+
 ## TODO
 
-* Unit test options
-* Add examples to `postProcessPageName` and `postProcessLabel`
+- Unit test options
+- Add examples to `postProcessPageName` and `postProcessLabel`
 
 ## Credits
 

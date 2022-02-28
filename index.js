@@ -26,7 +26,8 @@ module.exports = (options) => {
     postProcessLabel: (label) => {
       label = label.trim()
       return label
-    }
+    },
+    includeWikilinks = false
   }
 
   options = extend(true, defaults, options)
@@ -80,8 +81,18 @@ module.exports = (options) => {
         htmlAttrs.push(`${attrName}="${attrValue}"`)
       }
       htmlAttrsString = htmlAttrs.join(' ')
-
-      return `<a ${htmlAttrsString}>${label}</a>`
+      
+      switch (includeWikilinks) {
+        case 'inner': return `<a ${htmlAttrsString}>[[${label}]]</a>`
+        case 'outer': return `[[<a ${htmlAttrsString}>${label}</a>]]`
+        case false: return `<a ${htmlAttrsString}>${label}</a>`
+        default: {
+          if (typeof includeWikilinks == 'string' &&
+          ['inner', 'outer'].includes(includeWikilinks.toLowerCase()))
+          throw new Error('Invalid casing on `includeWikilinks`. Ensure value is lowercase')
+          else throw new Error(`Unknown value "${includeWikilinks}" for \`includeWikilinks\``)
+        }
+      }
     }
   )
 }
