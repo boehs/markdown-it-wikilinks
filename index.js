@@ -82,15 +82,15 @@ module.exports = (options) => {
       }
       htmlAttrsString = htmlAttrs.join(' ')
       
-      switch (includeWikilinks) {
+      switch (options.includeWikilinks) {
         case 'inner': return `<a ${htmlAttrsString}>[[${label}]]</a>`
         case 'outer': return `[[<a ${htmlAttrsString}>${label}</a>]]`
         case false: return `<a ${htmlAttrsString}>${label}</a>`
         default: {
-          if (typeof includeWikilinks == 'string' &&
-          ['inner', 'outer'].includes(includeWikilinks.toLowerCase()))
+          if (typeof options.includeWikilinks == 'string' &&
+          ['inner', 'outer'].includes(options.includeWikilinks.toLowerCase()))
           throw new Error('Invalid casing on `includeWikilinks`. Ensure value is lowercase')
-          else throw new Error(`Unknown value "${includeWikilinks}" for \`includeWikilinks\``)
+          else throw new Error(`Unknown value "${options.includeWikilinks}" for \`includeWikilinks\``)
         }
       }
     }

@@ -1,6 +1,6 @@
 {
   "name": "@gardeners/markdown-it-wikilinks",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "description": "Maintained fork of the legendary markdown-it-wikilinks",
   "main": "index.js",
   "scripts": {
