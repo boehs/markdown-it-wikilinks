@@ -1,0 +1,45 @@
+{
+  "name": "@gardeners/markdown-it-wikilinks",
+  "version": "1.4.3",
+  "description": "Maintained fork of the legendary markdown-it-wikilinks",
+  "main": "index.js",
+  "scripts": {
+    "coverage": "rimraf coverage && istanbul cover node_modules/.bin/_mocha",
+    "lint-init": "eslint --init",
+    "lint": "eslint index.js",
+    "test": "npm run lint && mocha -R spec",
+    "test-ci": "npm run lint && istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rimraf ./coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boehs/markdown-it-wikilinks.git"
+  },
+  "keywords": [
+    "markdown-it-plugin",
+    "markdown-it",
+    "markdown",
+    "wiki-links",
+    "wikimedia",
+    "wiki"
+  ],
+  "author": "Evan Boehs <evan@boehs.org>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/boehs/markdown-it-wikilinks/issues"
+  },
+  "homepage": "https://github.com/boehs/markdown-it-wikilinks#readme",
+  "devDependencies": {
+    "coveralls": "^3.1.1",
+    "eslint": "^8.10.0",
+    "istanbul": "^0.4.5",
+    "markdown-it": "^12.3.2",
+    "markdown-it-testgen": "^0.1.6",
+    "mocha": "^9.2.1",
+    "rimraf": "^3.0.2"
+  },
+  "dependencies": {
+    "extend": "^3.0.2",
+    "markdown-it-regexp": "^0.4.0",
+    "sanitize-filename": "^1.6.3"
+  }
+}
