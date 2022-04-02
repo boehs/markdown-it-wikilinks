@@ -15,11 +15,7 @@ npm --save install markdown-it-wikilinks
 ...and *use* it:
 
 ```js
-<<<<<<< Updated upstream
-const wikilinks = require('markdown-it-wikilinks')(options)
-=======
 const wikilinks = require('@gardeners/markdown-it-wikilinks')(options)
->>>>>>> Stashed changes
 const md = require('markdown-it')()
     .use(wikilinks)
     .render('Click [[Wiki Links|here]] to learn about [[/Wiki]] links.')
@@ -42,17 +38,11 @@ The regex to use when matching WikiLinks.
 ```js
 // Allow exclamation marks to be used.
 const html = require('markdown-it')()
-<<<<<<< Updated upstream
-  .use(require('markdown-it-wikilinks')({ linkPattern: /\[\[([\w\s/!]+)(\|([\w\s/!]+))?\]\]/ }))
-=======
   .use(require('@gardeners/markdown-it-wikilinks')({ linkPattern: /\[\[([\w\s/!]+)(\|([\w\s/!]+))?\]\]/ }))
->>>>>>> Stashed changes
   .render('[[Slate!]]')
   // <p><a href="./Slate!.html">Slate!</a></p>
 ```
 
-<<<<<<< Updated upstream
-=======
 ### `imagePattern`
 
 **Default:** undefined
@@ -66,7 +56,6 @@ The common regex for images is `/!\[\[([^]+?)\]\]/` (note the inclusion of ! at 
 A prefix for image urls, normally `/assets/`
 
 
->>>>>>> Stashed changes
 ### `baseURL`
 
 **Default:** `/`
@@ -75,11 +64,7 @@ The base URL for absolute wiki links.
 
 ```js
 const html = require('markdown-it')()
-<<<<<<< Updated upstream
-  .use(require('markdown-it-wikilinks')({ baseURL: '/wiki/' }))
-=======
   .use(require('@gardeners/markdown-it-wikilinks')({ baseURL: '/wiki/' }))
->>>>>>> Stashed changes
   .render('[[/Main Page]]')
   // <p><a href="/wiki/Main_Page.html">Main Page</a></p>
 ```
@@ -92,11 +77,7 @@ The base URL for relative wiki links.
 
 ```js
 const html = require('markdown-it')()
-<<<<<<< Updated upstream
-  .use(require('markdown-it-wikilinks')({ relativeBaseURL: '#', suffix: '' }))
-=======
   .use(require('@gardeners/markdown-it-wikilinks')({ relativeBaseURL: '#', suffix: '' }))
->>>>>>> Stashed changes
   .render('[[Main Page]]')
   // <p><a href="#Main_Page">Main Page</a></p>
 ```
@@ -115,11 +96,7 @@ Append this suffix to every URL.
 
 ```js
 const html = require('markdown-it')()
-<<<<<<< Updated upstream
-  .use(require('markdown-it-wikilinks')({ uriSuffix: '.php' }))
-=======
   .use(require('@gardeners/markdown-it-wikilinks')({ uriSuffix: '.php' }))
->>>>>>> Stashed changes
   .render('[[Main Page]]')
   // <p><a href="./Main_Page.php">Main Page</a></p>
 ```
@@ -136,11 +113,7 @@ const attrs = {
   'rel': 'nofollow'
 }
 const html = require('markdown-it')()
-<<<<<<< Updated upstream
-  .use(require('markdown-it-wikilinks')({ htmlAttributes: attrs }))
-=======
   .use(require('@gardeners/markdown-it-wikilinks')({ htmlAttributes: attrs }))
->>>>>>> Stashed changes
   .render('[[Main Page]]')
   // <p><a href="./Main_Page.html" class="wikilink" rel="nofollow">Main Page</a></p>
 ```
@@ -170,11 +143,7 @@ function myCustomPageNameGenerator(label) {
 }
 
 const html = require('markdown-it')()
-<<<<<<< Updated upstream
-  .use(require('markdown-it-wikilinks')({ generatePageNameFromLabel: myCustomPageNameGenerator }))
-=======
   .use(require('@gardeners/mardkwon-it-wikilinks')({ generatePageNameFromLabel: myCustomPageNameGenerator }))
->>>>>>> Stashed changes
   .render('Vive la [[révolution!]] VIVE LA [[RÉVOLUTION!!!]]')
   // <p>Vive la <a href="./Revolution.html">révolution!</a> VIVE LA <a href="./Revolution.html">RÉVOLUTION!!!</a></p>
 ```
@@ -215,11 +184,8 @@ Include wikilink delimiters (`[[`, `]]`) in output
 ## Credits
 
 Based on [markdown-it-ins](https://github.com/markdown-it/markdown-it-ins) by Vitaly Puzrin, Alex Kocharin.
-<<<<<<< Updated upstream
-=======
 
 ### Differences with [`markdown-it-obsidian`](https://www.npmjs.com/package/markdown-it-obsidian)
 
 - Wikistyle images via that fork
 - `markdown-it-obsidian` checks that the page exists before linking, `@gardeners/markdown-it-wikilinks` does not
->>>>>>> Stashed changes

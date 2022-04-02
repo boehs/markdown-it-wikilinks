@@ -27,12 +27,8 @@ module.exports = (options) => {
       label = label.trim()
       return label
     },
-<<<<<<< Updated upstream
-    includeWikilinks: false
-=======
     includeWikilinks: false,
     assetPrefix: ''
->>>>>>> Stashed changes
   }
 
   options = extend(true, defaults, options)
@@ -46,19 +42,13 @@ module.exports = (options) => {
   }
 
   return Plugin(
-<<<<<<< Updated upstream
-    options.linkPattern,
-=======
     new RegExp(options.imagePattern ? `(${options.imagePattern.source})|(${options.linkPattern.source})` : options.linkPattern.source),
->>>>>>> Stashed changes
     (match, utils) => {
       let label = ''
       let pageName = ''
       let href = ''
       let htmlAttrs = []
       let htmlAttrsString = ''
-<<<<<<< Updated upstream
-=======
             
       if (options.imagePattern?.test(match)) {
         match = match[0].match(options.imagePattern)
@@ -67,7 +57,6 @@ module.exports = (options) => {
       
       match = match[0].match(options.linkPattern)
       
->>>>>>> Stashed changes
       const isSplit = !!match[3]
       if (isSplit) {
         label = match[3]
