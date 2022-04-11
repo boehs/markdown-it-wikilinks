@@ -42,7 +42,7 @@ module.exports = (options) => {
   }
 
   return Plugin(
-    new RegExp(options.imagePattern ? `(${options.imagePattern.source})|(${options.linkPattern.source})` : options.linkPattern.source),
+    new RegExp(options.imagePattern ? `(${options.linkPattern.source})|(${options.imagePattern.source})` : options.linkPattern.source),
     (match, utils) => {
       let label = ''
       let pageName = ''
